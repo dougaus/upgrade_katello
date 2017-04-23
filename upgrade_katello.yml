@@ -1,0 +1,25 @@
+- name: Update rpms
+  yum:
+     name: "{{ item }}"
+     state: latest
+  with_items:
+     - "http://fedorapeople.org/groups/katello/releases/yum/3.3/katello/el7/x86_64/katello-repos-latest.rpm"
+     - "http://yum.theforeman.org/releases/1.14/el7/x86_64/foreman-release.rpm"
+  become: true
+
+- name: Update Foreman
+  yum:
+     name: foreman-release-scl
+     state: latest
+  become: true
+
+- name: Update Packages
+  yum:
+     name: "*"
+     state: latest
+     update_cache: true
+  become: true
+
+- name: Run Upgrade
+  shell: foreman-installer --scenario katello --upgrade
+  become: true
