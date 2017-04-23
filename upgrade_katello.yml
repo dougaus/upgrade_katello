@@ -24,5 +24,7 @@
      become: true
 
    - name: Run Upgrade
-     shell: bash /sbin/foreman-installer --scenario katello --upgrade
+     shell: "/sbin/foreman-installer --scenario katello --upgrade"
+     environment:
+        SHELL: /bin/bash
      become: true
