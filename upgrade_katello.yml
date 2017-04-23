@@ -24,7 +24,5 @@
      become: true
 
    - name: Run Upgrade
-     shell: foreman-installer --scenario katello --upgrade
-     environment:
-        TERM: xterm-256color
+     shell: bash foreman-installer --scenario katello --upgrade
      become: true
