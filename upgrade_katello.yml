@@ -25,4 +25,6 @@
 
    - name: Run Upgrade
      shell: foreman-installer --scenario katello --upgrade
+     environment:
+        TERM: xterm-256color
      become: true
