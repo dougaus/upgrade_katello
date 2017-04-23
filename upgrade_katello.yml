@@ -23,6 +23,7 @@
         update_cache: true
      become: true
 
+#  Need to specify a shell for this command.
    - name: Run Upgrade
      shell: "/sbin/foreman-installer --scenario katello --upgrade"
      environment:
