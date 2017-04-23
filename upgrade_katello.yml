@@ -4,7 +4,7 @@
    - name: Update rpms
      yum:
         name: "{{ item }}"
-        state: latest
+        state: present
      with_items:
         - "http://fedorapeople.org/groups/katello/releases/yum/3.3/katello/el7/x86_64/katello-repos-latest.rpm"
         - "http://yum.theforeman.org/releases/1.14/el7/x86_64/foreman-release.rpm"
