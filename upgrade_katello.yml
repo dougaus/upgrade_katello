@@ -1,4 +1,5 @@
 ---
+hosts: all
 tasks: 
    - name: Update rpms
      yum:
